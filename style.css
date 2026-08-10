@@ -45,13 +45,15 @@ a{
   margin-left: 10px;
 }
 .orientation{
-  background-color: #c1fae2;
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 20px;
   border-radius: 20px;
   justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
 }
 .orientation__item{
   border-radius: 10px;
@@ -84,4 +86,9 @@ a{
   margin-bottom: 10px;
   color: #58835f;
   background-color: #ffffff;
+}
+.content__title::after{
+  content: " //";
+  color: #d2c20f;
+  font-size: 30px;
 }
