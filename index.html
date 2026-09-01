@@ -1,47 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>мухтар</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="banner">
-    <h1 class="banner__title">ITHelper<span class="banner__title-skobs">{}</span></h1>
-    <!-- перый опыт с бекендом -->
-          <!-- Telegram Login -->
-          <div id="telegram-login"></div>
 
-          <script
-            async
-            src="https://telegram.org/js/telegram-widget.js?22"
-            data-telegram-login="authorizer1_bot"
-            data-size="large"
-            data-userpic="true"
-            data-request-access="write"
-            data-onauth="onTelegramAuth(user)">
-          </script>
-    <div class="banner__icons">
-      <a href="https://t.me/LutisTeam">
-        <img class="banner__icon" src="images/telegram-icon.png">
-      </a>
-      <img class="banner__icon" src="images/vk-icon.png">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ITHelper</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <!-- =========================
+       BANNER
+       ========================= -->
+
+  <div class="banner">
+
+    <h1 class="banner__title">
+      ITHelper<span class="banner__title-skobs">{}</span>
+    </h1>
+
+    <div class="banner__right">
+
+      <!-- Telegram Login -->
+
+      <div id="telegram-login">
+
+        <script
+          async
+          src="https://telegram.org/js/telegram-widget.js?22"
+          data-telegram-login="authorizer1_bot"
+          data-size="large"
+          data-userpic="true"
+          data-request-access="write"
+          data-onauth="onTelegramAuth(user)">
+        </script>
+
+      </div>
+
+
+      <!-- Social icons -->
+
+      <div class="banner__icons">
+
+        <a href="https://t.me/LutisTeam">
+          <img
+            class="banner__icon"
+            src="images/telegram-icon.png"
+            alt="Telegram"
+          >
+        </a>
+
+        <img
+          class="banner__icon"
+          src="images/vk-icon.png"
+          alt="VK"
+        >
+
+      </div>
+
     </div>
+
   </div>
+
+
+  <!-- =========================
+       CONTENT
+       ========================= -->
+
   <div class="content">
+
+    <!-- Navigation -->
+
     <div class="orientation">
-      <a class="orientation__item" href="pages/about-git.html">что такое Git?</a>
-      <a class="orientation__item" href="pages/about-html.html">лекции про HTML </a>
-      <a class="orientation__item" href="pages/about-css.html">лекции про CSS</a>
-      <a class="orientation__item" href="pages/about-javascript.html">лекции про JavaScript</a>
-      <a class="orientation__item" href="pages/about-bem.html">методология БЭМ</a>
+
+      <a
+        class="orientation__item"
+        href="pages/about-git.html"
+      >
+        что такое Git?
+      </a>
+
+      <a
+        class="orientation__item"
+        href="pages/about-html.html"
+      >
+        лекции про HTML
+      </a>
+
+      <a
+        class="orientation__item"
+        href="pages/about-css.html"
+      >
+        лекции про CSS
+      </a>
+
+      <a
+        class="orientation__item"
+        href="pages/about-javascript.html"
+      >
+        лекции про JavaScript
+      </a>
+
+      <a
+        class="orientation__item"
+        href="pages/about-bem.html"
+      >
+        методология БЭМ
+      </a>
+
     </div>
-    <!-- <div class="content__main">
-      <p>Добро пожаловать в ITHelper!</p>
-    </div> -->
-    <iframe class="content__iframe" src="pages/about-git.html"></iframe>
+
+
+    <!-- Main content -->
+
+    <iframe
+      class="content__iframe"
+      src="pages/about-git.html"
+      title="ITHelper content"
+    ></iframe>
+
   </div>
-<script src="script.js"></script>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       ========================= -->
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
