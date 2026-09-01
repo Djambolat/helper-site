@@ -93,41 +93,32 @@ a{
   color: #d2c20f;
   font-size: 30px;
 }
-/* ==============================
-   TELEGRAM USER PROFILE
-   ============================== */
+/* =========================
+   TELEGRAM AUTH
+   ========================= */
 
 #telegram-login {
   display: flex;
   align-items: center;
+  margin-left: auto;
+  margin-right: 30px;
 }
+
+/* Профиль после авторизации */
 
 .user-profile {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 
   padding: 6px 8px 6px 6px;
 
   background: #ffffff;
-  border: 1px solid #e8e8e8;
-  border-radius: 14px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
 
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.06);
-
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
-
-.user-profile:hover {
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.09);
-
-  transform: translateY(-1px);
-}
-
 
 /* Аватар */
 
@@ -135,12 +126,13 @@ a{
   width: 38px;
   height: 38px;
 
-  flex-shrink: 0;
-
   object-fit: cover;
-
   border-radius: 50%;
+
+  display: block;
 }
+
+/* Если аватара нет */
 
 .user-profile__avatar--empty {
   display: flex;
@@ -149,28 +141,23 @@ a{
 
   background: #eeeeee;
 
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 700;
 }
 
-
-/* Имя + username */
-
-.user-profile__info {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-}
+/* Блок имени */
 
 .user-profile__text {
   display: flex;
   flex-direction: column;
 
-  min-width: 0;
+  line-height: 1.1;
 }
 
+/* Имя */
+
 .user-profile__name {
-  max-width: 120px;
+  max-width: 130px;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -178,58 +165,66 @@ a{
 
   font-size: 14px;
   font-weight: 600;
-  line-height: 18px;
+
+  color: #222;
 }
 
+/* @username */
+
 .user-profile__username {
-  max-width: 120px;
+  max-width: 130px;
 
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  color: #888888;
-
   font-size: 12px;
-  line-height: 15px;
-}
 
+  color: #888;
+}
 
 /* Кнопка выхода */
 
 .user-profile__logout {
   padding: 7px 10px;
 
-  border: 0;
-  border-radius: 9px;
+  border: none;
+  border-radius: 8px;
 
-  background: transparent;
+  background: #f1f1f1;
 
-  color: #777777;
+  color: #555;
 
   font-family: inherit;
   font-size: 12px;
-  font-weight: 500;
 
   cursor: pointer;
 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .user-profile__logout:hover {
-  background: #f1f1f1;
-  color: #222222;
+  background: #e5e5e5;
+  color: #111;
 }
 
 
-/* Мобильная версия */
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 600px) {
+
+  #telegram-login {
+    margin-right: 10px;
+  }
+
   .user-profile {
-    gap: 7px;
     padding: 5px;
+  }
+
+  .user-profile__text {
+    display: none;
   }
 
   .user-profile__avatar {
@@ -237,11 +232,4 @@ a{
     height: 34px;
   }
 
-  .user-profile__text {
-    display: none;
-  }
-
-  .user-profile__logout {
-    padding: 7px 8px;
-  }
 }
