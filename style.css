@@ -94,45 +94,67 @@ a{
   font-size: 30px;
 }
 /* =========================
+   BANNER RIGHT
+   ========================= */
+
+.banner__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-left: auto;
+}
+
+
+/* =========================
    TELEGRAM AUTH
    ========================= */
 
 #telegram-login {
   display: flex;
   align-items: center;
-  margin-left: auto;
-  margin-right: 30px;
 }
 
-/* Профиль после авторизации */
+
+/* =========================
+   USER PROFILE
+   ========================= */
 
 .user-profile {
   display: flex;
   align-items: center;
   gap: 10px;
 
-  padding: 6px 8px 6px 6px;
+  padding: 5px 7px 5px 5px;
 
   background: #ffffff;
-  border: 1px solid #e5e5e5;
+
   border-radius: 12px;
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.12);
+
+  box-sizing: border-box;
 }
+
 
 /* Аватар */
 
 .user-profile__avatar {
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
 
-  object-fit: cover;
-  border-radius: 50%;
+  flex-shrink: 0;
 
   display: block;
+
+  object-fit: cover;
+
+  border-radius: 50%;
 }
 
-/* Если аватара нет */
+
+/* Аватар без фотографии */
 
 .user-profile__avatar--empty {
   display: flex;
@@ -141,18 +163,31 @@ a{
 
   background: #eeeeee;
 
+  color: #555555;
+
   font-size: 16px;
   font-weight: 700;
 }
 
-/* Блок имени */
+
+/* Имя + username */
+
+.user-profile__info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+
+/* Текст */
 
 .user-profile__text {
   display: flex;
   flex-direction: column;
 
-  line-height: 1.1;
+  gap: 2px;
 }
+
 
 /* Имя */
 
@@ -163,13 +198,16 @@ a{
   text-overflow: ellipsis;
   white-space: nowrap;
 
+  color: #222222;
+
+  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 14px;
   font-weight: 600;
-
-  color: #222;
 }
 
-/* @username */
+
+/* Username */
 
 .user-profile__username {
   max-width: 130px;
@@ -178,12 +216,17 @@ a{
   text-overflow: ellipsis;
   white-space: nowrap;
 
-  font-size: 12px;
+  color: #888888;
 
-  color: #888;
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 12px;
 }
 
-/* Кнопка выхода */
+
+/* =========================
+   LOGOUT
+   ========================= */
 
 .user-profile__logout {
   padding: 7px 10px;
@@ -191,21 +234,47 @@ a{
   border: none;
   border-radius: 8px;
 
-  background: #f1f1f1;
+  background: #f0f0f0;
 
-  color: #555;
+  color: #555555;
 
-  font-family: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+
   font-size: 12px;
+  font-weight: 500;
 
   cursor: pointer;
 
-  transition: 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .user-profile__logout:hover {
-  background: #e5e5e5;
-  color: #111;
+  background: #e4e4e4;
+
+  color: #222222;
+}
+
+
+/* =========================
+   SOCIAL ICONS
+   ========================= */
+
+.banner__icons {
+  display: flex;
+  align-items: center;
+
+  margin-left: 0;
+}
+
+.banner__icon {
+  width: 40px;
+  height: 40px;
+
+  margin-left: 10px;
+
+  object-fit: contain;
 }
 
 
@@ -213,14 +282,18 @@ a{
    MOBILE
    ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-  #telegram-login {
-    margin-right: 10px;
+  .banner {
+    flex-wrap: wrap;
+
+    gap: 15px;
   }
 
-  .user-profile {
-    padding: 5px;
+  .banner__right {
+    width: 100%;
+
+    justify-content: flex-end;
   }
 
   .user-profile__text {
@@ -228,8 +301,35 @@ a{
   }
 
   .user-profile__avatar {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .banner {
+    padding: 12px;
+  }
+
+  .banner__title {
+    font-size: 24px;
+  }
+
+  .banner__title-skobs {
+    font-size: 30px;
+  }
+
+  .banner__right {
+    gap: 5px;
+  }
+
+  .banner__icon {
+    width: 32px;
+    height: 32px;
+
+    margin-left: 5px;
   }
 
 }
