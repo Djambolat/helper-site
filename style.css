@@ -93,3 +93,155 @@ a{
   color: #d2c20f;
   font-size: 30px;
 }
+/* ==============================
+   TELEGRAM USER PROFILE
+   ============================== */
+
+#telegram-login {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 6px 8px 6px 6px;
+
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.06);
+
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.user-profile:hover {
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.09);
+
+  transform: translateY(-1px);
+}
+
+
+/* Аватар */
+
+.user-profile__avatar {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.user-profile__avatar--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eeeeee;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* Имя + username */
+
+.user-profile__info {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.user-profile__text {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.user-profile__name {
+  max-width: 120px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.user-profile__username {
+  max-width: 120px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #888888;
+
+  font-size: 12px;
+  line-height: 15px;
+}
+
+
+/* Кнопка выхода */
+
+.user-profile__logout {
+  padding: 7px 10px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #777777;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.user-profile__logout:hover {
+  background: #f1f1f1;
+  color: #222222;
+}
+
+
+/* Мобильная версия */
+
+@media (max-width: 600px) {
+  .user-profile {
+    gap: 7px;
+    padding: 5px;
+  }
+
+  .user-profile__avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .user-profile__text {
+    display: none;
+  }
+
+  .user-profile__logout {
+    padding: 7px 8px;
+  }
+}

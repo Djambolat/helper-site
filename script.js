@@ -151,29 +151,48 @@ function showUser(user) {
     return;
   }
 
+  const username = user.username
+    ? `@${user.username}`
+    : "Telegram пользователь";
+
   telegramLogin.innerHTML = `
     <div class="user-profile">
 
-      ${
-        user.photo_url
-          ? `
-            <img
-              class="user-profile__avatar"
-              src="${user.photo_url}"
-              alt=""
-            >
-          `
-          : ""
-      }
+      <div class="user-profile__info">
 
-      <span class="user-profile__name">
-        ${user.first_name}
-      </span>
+        ${
+          user.photo_url
+            ? `
+              <img
+                class="user-profile__avatar"
+                src="${user.photo_url}"
+                alt="${user.first_name}"
+              >
+            `
+            : `
+              <div class="user-profile__avatar user-profile__avatar--empty">
+                ${user.first_name.charAt(0).toUpperCase()}
+              </div>
+            `
+        }
+
+        <div class="user-profile__text">
+          <span class="user-profile__name">
+            ${user.first_name}
+          </span>
+
+          <span class="user-profile__username">
+            ${username}
+          </span>
+        </div>
+
+      </div>
 
       <button
         class="user-profile__logout"
         type="button"
         id="logout-button"
+        title="Выйти"
       >
         Выйти
       </button>
@@ -182,9 +201,7 @@ function showUser(user) {
   `;
 
   const logoutButton =
-    document.getElementById(
-      "logout-button"
-    );
+    document.getElementById("logout-button");
 
   if (logoutButton) {
     logoutButton.addEventListener(
